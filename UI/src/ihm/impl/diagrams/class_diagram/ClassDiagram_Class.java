@@ -1,5 +1,9 @@
 package ihm.impl.diagrams.class_diagram;
 
+import ihm.abstracts.AbstractBasePanel;
+import ihm.impl.diagrams.class_diagram.adapters.ClassDiagram_ClassAdapter;
+import ihm.interfaces.IBaseAdapter;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -8,7 +12,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ClassDiagram_Class extends JPanel{
+public class ClassDiagram_Class extends AbstractBasePanel{
 
     /**
 	 * 
@@ -18,12 +22,15 @@ public class ClassDiagram_Class extends JPanel{
 	JPanel c ;
 	JPanel h;
     private JTextField textField;
+    private IBaseAdapter adapter;
     
 	  public ClassDiagram_Class(){
+		  
 		  super();
 		  this.setLayout(null);
 	      this.internalPanel = new JPanel();
 	      this.internalPanel.setLayout(new BorderLayout());
+	      adapter = new ClassDiagram_ClassAdapter();
 	      
 		  h = new JPanel();
 		  c = new JPanel();

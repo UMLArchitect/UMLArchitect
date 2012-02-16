@@ -1,54 +1,63 @@
 package ihm.impl.diagrams.package_diagram.adapters;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-import ihm.abstracts.AbstractBaseComponent;
+import ihm.abstracts.AbstractBasePanel;
 import ihm.interfaces.IBaseAdapter;
 
 public class PackageDiagram_PackageAdapter implements IBaseAdapter {
 
 	@Override
-	public void mouseClicked(ArrayList<AbstractBaseComponent> all, AbstractBaseComponent c) {
+	public void mouseClicked(ArrayList<AbstractBasePanel> all,
+			AbstractBasePanel c, MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseEntered(ArrayList<AbstractBaseComponent> all, AbstractBaseComponent c) {
+	public void mouseEntered(ArrayList<AbstractBasePanel> all,
+			AbstractBasePanel c, MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseExited(ArrayList<AbstractBaseComponent> all, AbstractBaseComponent c) {
+	public void mouseExited(ArrayList<AbstractBasePanel> all,
+			AbstractBasePanel c, MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mousePressed(ArrayList<AbstractBaseComponent> all, AbstractBaseComponent c) {
+	public void mousePressed(ArrayList<AbstractBasePanel> all,
+			AbstractBasePanel c, MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseReleased(ArrayList<AbstractBaseComponent> all, AbstractBaseComponent c) {
+	public void mouseReleased(ArrayList<AbstractBasePanel> all,
+			AbstractBasePanel c, MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseDragged(ArrayList<AbstractBaseComponent> all, AbstractBaseComponent c) {
+	public void mouseDragged(ArrayList<AbstractBasePanel> all,
+			AbstractBasePanel c, MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseMoved(ArrayList<AbstractBaseComponent> all, AbstractBaseComponent c) {
+	public void mouseMoved(ArrayList<AbstractBasePanel> all,
+			AbstractBasePanel c, MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	
 	
 
 	

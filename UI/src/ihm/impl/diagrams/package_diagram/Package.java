@@ -1,8 +1,8 @@
 package ihm.impl.diagrams.package_diagram;
 
-import ihm.abstracts.AbstractBaseComponent;
+import ihm.abstracts.AbstractBasePanel;
 
-public class Package extends AbstractBaseComponent {
+public class Package extends AbstractBasePanel {
 
 	/**
 	 * 

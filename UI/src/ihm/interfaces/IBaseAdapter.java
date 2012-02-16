@@ -1,17 +1,18 @@
 package ihm.interfaces;
 
-import ihm.abstracts.AbstractBaseComponent;
+import ihm.abstracts.AbstractBasePanel;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 
 public interface IBaseAdapter {
 
-	public void mouseClicked(ArrayList<AbstractBaseComponent> all,AbstractBaseComponent c);
-	public void mouseEntered(ArrayList<AbstractBaseComponent> all,AbstractBaseComponent c);
-	public void mouseExited(ArrayList<AbstractBaseComponent> all,AbstractBaseComponent c);
-	public void mousePressed(ArrayList<AbstractBaseComponent> all,AbstractBaseComponent c);
-	public void mouseReleased(ArrayList<AbstractBaseComponent> all,AbstractBaseComponent c);
-	public void mouseDragged(ArrayList<AbstractBaseComponent> all,AbstractBaseComponent c);
-	public void mouseMoved(ArrayList<AbstractBaseComponent> all,AbstractBaseComponent c);
+	public void mouseClicked(ArrayList<AbstractBasePanel> all,AbstractBasePanel c,MouseEvent e);
+	public void mouseEntered(ArrayList<AbstractBasePanel> all,AbstractBasePanel c,MouseEvent e);
+	public void mouseExited(ArrayList<AbstractBasePanel> all,AbstractBasePanel c,MouseEvent e);
+	public void mousePressed(ArrayList<AbstractBasePanel> all,AbstractBasePanel c,MouseEvent e);
+	public void mouseReleased(ArrayList<AbstractBasePanel> all,AbstractBasePanel c,MouseEvent e);
+	public void mouseDragged(ArrayList<AbstractBasePanel> all,AbstractBasePanel c,MouseEvent e);
+	public void mouseMoved(ArrayList<AbstractBasePanel> all,AbstractBasePanel c,MouseEvent e);
 }

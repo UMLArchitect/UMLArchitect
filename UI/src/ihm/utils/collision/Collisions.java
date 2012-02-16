@@ -1,6 +1,6 @@
 package ihm.utils.collision;
 
-import ihm.abstracts.AbstractBaseComponent;
+import ihm.abstracts.AbstractBasePanel;
 
 
 import java.awt.Component;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Collisions {
 	
-	public static boolean isCollision(Component toto,List<AbstractBaseComponent> all){
+	public static boolean isCollision(Component toto,List<AbstractBasePanel> all){
 		for (Component t : all)
 		{
 			if(isIntersect(toto,t))

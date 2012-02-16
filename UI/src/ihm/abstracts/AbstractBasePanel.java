@@ -2,9 +2,9 @@ package ihm.abstracts;
 
 import ihm.interfaces.IBaseAdapter;
 
-import java.awt.Component;
+import javax.swing.JPanel;
 
-public abstract class AbstractBaseComponent extends Component {
+public abstract class AbstractBasePanel extends JPanel {
 
 	/**
 	 * 
