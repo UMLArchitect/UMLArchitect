@@ -15,11 +15,14 @@ public class Collisions {
 			{
 				return true;
 			}
+			
 		}
 		return false;
 	}
 	
 	private static boolean isIntersect(Component a, Component b){
+		if(a.equals(b))
+				return false;
 		return a.getBounds().intersects(b.getBounds());
 	}
 	

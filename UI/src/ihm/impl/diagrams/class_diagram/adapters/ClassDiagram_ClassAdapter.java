@@ -17,6 +17,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 	@Override
 	public void mouseClicked(ArrayList<AbstractBasePanel> all,
 			AbstractBasePanel c, MouseEvent e) {
+		
 		// TODO Auto-generated method stub
 		
 	}
@@ -38,6 +39,9 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 	@Override
 	public void mousePressed(ArrayList<AbstractBasePanel> all,
 			AbstractBasePanel c, MouseEvent e) {
+		rect = c.getBounds();
+		
+		System.out.println(e.getX()+"    "+e.getY());
 		// TODO Auto-generated method stub
 		
 	}
@@ -47,7 +51,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 			AbstractBasePanel c, MouseEvent e) {
 		if(Collisions.isCollision(c, all))
 		{
-			Animation.returnToOrigin(c, rect, 100, 100);
+			Animation.returnToOrigin(c, rect, 10, 100);
 		}
 		// TODO Auto-generated method stub
 		
@@ -56,7 +60,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 	@Override
 	public void mouseDragged(ArrayList<AbstractBasePanel> all,
 			AbstractBasePanel c, MouseEvent e) {
-		rect = c.getBounds();
+		
 		c.setBackground(new Color(255,0,0));
 		c.setBounds(c.getX() + e.getX(),c.getY() + e.getY(), c.getWidth(), c.getHeight());
 		c.getParent().repaint();

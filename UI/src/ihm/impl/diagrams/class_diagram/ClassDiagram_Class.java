@@ -22,7 +22,6 @@ public class ClassDiagram_Class extends AbstractBasePanel{
 	JPanel c ;
 	JPanel h;
     private JTextField textField;
-    private IBaseAdapter adapter;
     
 	  public ClassDiagram_Class(){
 		  
@@ -30,7 +29,7 @@ public class ClassDiagram_Class extends AbstractBasePanel{
 		  this.setLayout(null);
 	      this.internalPanel = new JPanel();
 	      this.internalPanel.setLayout(new BorderLayout());
-	      adapter = new ClassDiagram_ClassAdapter();
+	      setAdapter(new ClassDiagram_ClassAdapter());
 	      
 		  h = new JPanel();
 		  c = new JPanel();

@@ -47,8 +47,6 @@ public class MouseActions implements MouseMotionListener, MouseListener ,IObserv
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		((AbstractBasePanel)arg0.getComponent()).getAdapter().mouseReleased(all, (AbstractBasePanel)arg0.getComponent(), arg0);
-		
-		
 	}
 
 	@Override
@@ -60,14 +58,12 @@ public class MouseActions implements MouseMotionListener, MouseListener ,IObserv
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		((AbstractBasePanel)arg0.getComponent()).getAdapter().mouseMoved(all, (AbstractBasePanel)arg0.getComponent(), arg0);
-		
 	}
 
 	@Override
 	public void setObserverManager(
 			ihm.interfaces.IObserverManager observerManager) {
 		this._observerManager = (ObserverManager) observerManager;
-		
 	}
 	
 	

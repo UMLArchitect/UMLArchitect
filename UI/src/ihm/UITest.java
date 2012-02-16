@@ -19,8 +19,8 @@ public class UITest extends JFrame {
 		JFrame ui = new UITest();
 		ui.setBounds(10, 10, 10000, 10000);
 		ui.setLayout(null);
-		AbstractBasePanel panel = new ClassDiagram_Class();
-		AbstractBasePanel panel2 = new ClassDiagram_Class();
+		ClassDiagram_Class panel = new ClassDiagram_Class();
+		ClassDiagram_Class panel2 = new ClassDiagram_Class();
 		panel.setBounds(100, 100, 100, 100);
 		panel2.setBounds(500, 500, 100, 100);
 
