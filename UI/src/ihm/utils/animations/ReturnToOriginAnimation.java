@@ -1,6 +1,7 @@
 package ihm.utils.animations;
 
 import java.awt.Component;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,19 +11,22 @@ import javax.swing.Timer;
 public class ReturnToOriginAnimation implements ActionListener {
 
 	Component c;
-	int nb_inter;
+	float nb_inter;
 	int nb_event = 0;
 	Timer t;
-	int inter_X;
-	int inter_Y;
+	float inter_X;
+	float inter_Y;
+	Point p;
 	
-	public ReturnToOriginAnimation(Timer t, Component c, Rectangle rect, int nb)
+	public ReturnToOriginAnimation(Timer t, Component c, Rectangle rect, int nb, Point p)
 	{
 		this.t = t;
 		this.c=c;
-		this.nb_inter = nb;
-		inter_X = (int)(rect.x -c.getX())/nb_inter;
-		inter_Y = (int)(rect.y -c.getY())/nb_inter;
+		this.nb_inter = 1;
+		this.p = p;
+		inter_X = (rect.x -c.getX()-p.x)/nb_inter;
+		inter_Y = (rect.y -c.getY()-p.y)/nb_inter;
+		
 	}
 	
 	
@@ -35,7 +39,7 @@ public class ReturnToOriginAnimation implements ActionListener {
 		{
 			t.stop();
 		}
-		c.setBounds(c.getX()+inter_X, c.getY() + inter_Y,c.getWidth(),c.getHeight());
+		c.setBounds((int)(c.getX()+inter_X), (int)(c.getY() + inter_Y),c.getWidth(),c.getHeight());
 		c.getParent().repaint();
 	}
 

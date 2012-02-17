@@ -17,7 +17,6 @@ public class UITest extends JFrame {
 	public static void main(String[] args){
 		
 		JFrame ui = new UITest();
-		ui.setBounds(10, 10, 10000, 10000);
 		ui.setLayout(null);
 		ClassDiagram_Class panel = new ClassDiagram_Class();
 		ClassDiagram_Class panel2 = new ClassDiagram_Class();
@@ -26,7 +25,7 @@ public class UITest extends JFrame {
 
 		ui.add(panel);
 		ui.add(panel2);
-		ui.setSize(500, 300);
+		ui.setSize(800, 800);
 		ui.setVisible(true);
 		
 		MouseActions ma = new MouseActions();		
