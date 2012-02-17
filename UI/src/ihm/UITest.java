@@ -1,7 +1,6 @@
 package ihm;
 
 
-import ihm.abstracts.AbstractBasePanel;
 import ihm.impl.diagrams.class_diagram.ClassDiagram_Class;
 import ihm.impl.listeners.MouseActions;
 

@@ -2,7 +2,6 @@ package ihm.impl.diagrams.class_diagram;
 
 import ihm.abstracts.AbstractBasePanel;
 import ihm.impl.diagrams.class_diagram.adapters.ClassDiagram_ClassAdapter;
-import ihm.interfaces.IBaseAdapter;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

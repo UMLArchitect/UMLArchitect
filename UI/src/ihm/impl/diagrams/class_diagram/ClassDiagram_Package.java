@@ -19,7 +19,6 @@ public class ClassDiagram_Package extends JPanel{
 	JPanel h;
 	JPanel hg;
     private JTextField textField;
-    private JPanel insidePanel;
     
 	  public ClassDiagram_Package(){
 		  super();
