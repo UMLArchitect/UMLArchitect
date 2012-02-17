@@ -40,10 +40,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 	public void mousePressed(ArrayList<AbstractBasePanel> all,
 			AbstractBasePanel c, MouseEvent e) {
 		rect = c.getBounds();
-		
-		System.out.println(e.getX()+"    "+e.getY());
-		// TODO Auto-generated method stub
-		
+			
 	}
 
 	@Override
@@ -53,8 +50,6 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 		{
 			Animation.returnToOrigin(c, rect, 10, 100);
 		}
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

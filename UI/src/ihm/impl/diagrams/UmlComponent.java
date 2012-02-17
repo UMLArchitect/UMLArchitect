@@ -1,11 +1,13 @@
 package ihm.impl.diagrams;
-import java.awt.*;
+import ihm.abstracts.AbstractBasePanel;
+import ihm.impl.listeners.MouseActions;
 
-import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Frame;
+import java.awt.Point;
 
-import ihm.impl.listeners.PanelMouseActions;
-
-public class UmlComponent extends JPanel{
+public class UmlComponent extends AbstractBasePanel{
 	
 	/**
 	 * 
@@ -14,9 +16,11 @@ public class UmlComponent extends JPanel{
 
 	public UmlComponent(Frame myFrame,int x,int y) {
 		// TODO Auto-generated constructor stub
-		this.setBackground(new Color(255,0,255));
+		this.setForeground(new Color(255,0,255));
 		this.setBounds(x,y,100,100);
-        this.addMouseMotionListener(new PanelMouseActions(myFrame));  
+		MouseActions ma = new MouseActions();
+        this.addMouseMotionListener(ma);
+		ma.add(this);
         myFrame.add(this);
 	}
 	

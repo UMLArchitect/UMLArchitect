@@ -2,6 +2,7 @@ package ihm.impl.listeners;
 
 import ihm.impl.diagrams.UmlComponent;
 
+import java.awt.Component;
 import java.awt.Frame;
 import java.awt.event.*;
 import javax.swing.event.PopupMenuEvent;
@@ -11,10 +12,10 @@ public class RightClickPopupMenuListener implements ActionListener, PopupMenuLis
 	public Frame myFrame;
 	public MouseEvent ME; // Contains the mouseEvent for the UMLComponent position
 	
-	public RightClickPopupMenuListener(Frame myFrame,MouseEvent e)
+	public RightClickPopupMenuListener(Component component,MouseEvent e)
 	{
 		super();
-		this.myFrame = myFrame;
+		this.myFrame = (Frame)component;
 		this.ME = e; 
 	}
 
