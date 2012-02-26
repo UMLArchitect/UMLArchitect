@@ -1,0 +1,44 @@
+Version 0:
+
+  - Création de l’IHM( menu, toolbar, frame,..)
+	- gestion des évènements
+
+Version 0.1:
+
+	- Sauvegarder un projet
+	- Créer un projet
+	- Fermer un projet
+	- Ouvrir un projet
+- Sauvegarder un fichier
+	- Fermer un fichier
+	
+Version 0.2:
+
+	-  Création d’un diagramme de classe ( fenêtre + toolbar)
+	-  Création d’un diagramme de cas d’utilisation  ( fenêtre + toolbar)
+	-  Création d’un diagramme d’activité  ( fenêtre + toolbar)
+	-  Création d’un diagramme de collaboration  ( fenêtre + toolbar)
+	-  Création d’un diagramme de déploiement  ( fenêtre + toolbar)
+	-  Création d’un diagramme de séquences  ( fenêtre + toolbar)
+	-  Création d’un diagramme d’état-transition  ( fenêtre + toolbar)
+	-   Import / Export XMI 
+
+Version 0.3:
+
+	- Ajout d’un composant générique dans un diagramme
+	- Suppression d’un composant générique dans un diagramme
+	- Déplacement d’un composant générique dans un diagramme
+	- Export des diagrammes sous un format d’image
+
+Version 0.4:
+
+	- Ajout des principales fonctionnalités pour chaque type de diagramme
+
+
+version 0.5:
+
+	-  génération de code
+	-  génération de documentation
+	
+version 0.6:
+	- reverse engineering
