@@ -11,6 +11,11 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Henri DESOBRY
+ *
+ */
 public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 	
 	private Rectangle rect;

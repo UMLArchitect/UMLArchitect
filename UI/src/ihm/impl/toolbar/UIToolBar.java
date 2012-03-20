@@ -11,7 +11,7 @@ import javax.swing.JToolBar;
 
 /**
  * 
- * @author Kossi
+ * @author Kossi SODATONOU
  *
  */
 public class UIToolBar extends JToolBar{

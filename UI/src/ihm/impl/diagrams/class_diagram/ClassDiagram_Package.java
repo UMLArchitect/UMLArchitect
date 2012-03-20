@@ -8,6 +8,12 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
+/**
+ * 
+ * @author Kilic FURKAN
+ *
+ */
 public class ClassDiagram_Package extends JPanel{
 
     /**

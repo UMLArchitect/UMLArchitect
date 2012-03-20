@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import ihm.abstracts.AbstractBasePanel;
 import ihm.interfaces.IBaseAdapter;
 
+/**
+ * 
+ * @author Henri DESOBRY
+ *
+ */
 public class PackageDiagram_PackageAdapter implements IBaseAdapter {
 
 	@Override

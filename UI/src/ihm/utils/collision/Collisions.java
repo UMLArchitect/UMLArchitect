@@ -5,6 +5,11 @@ import ihm.abstracts.AbstractBasePanel;
 
 import java.awt.Component;
 import java.util.List;
+/**
+ * 
+ * @author Henri DESOBRY
+ *
+ */
 
 public class Collisions 
 {	

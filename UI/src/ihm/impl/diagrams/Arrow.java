@@ -5,6 +5,11 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author Kilic FURKAN
+ *
+ */
 public class Arrow extends JPanel
 {
     /**

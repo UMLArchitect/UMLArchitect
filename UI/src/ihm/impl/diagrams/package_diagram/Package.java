@@ -2,6 +2,11 @@ package ihm.impl.diagrams.package_diagram;
 
 import ihm.abstracts.AbstractBasePanel;
 
+/**
+ * 
+ * @author Henri DESOBRY
+ *
+ */
 public class Package extends AbstractBasePanel {
 
 	/**

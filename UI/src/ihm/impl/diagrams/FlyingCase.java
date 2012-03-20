@@ -8,6 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import ihm.utils.Array;
 
+/**
+ * 
+ * @author Kilic FURKAN
+ *
+ */
 public class FlyingCase extends JPanel
 {
     /**

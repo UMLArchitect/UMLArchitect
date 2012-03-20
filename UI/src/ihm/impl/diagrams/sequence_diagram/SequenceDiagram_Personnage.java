@@ -15,6 +15,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * 
+ * @author Kilic FURKAN
+ *
+ */
 public class SequenceDiagram_Personnage extends JPanel{
 
     /**

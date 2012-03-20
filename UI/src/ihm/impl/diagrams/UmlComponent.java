@@ -7,6 +7,11 @@ import java.awt.Component;
 import java.awt.Frame;
 import java.awt.Point;
 
+/**
+ * 
+ * @author Kossi SODATONOU
+ *
+ */
 public class UmlComponent extends AbstractBasePanel{
 	
 	/**
