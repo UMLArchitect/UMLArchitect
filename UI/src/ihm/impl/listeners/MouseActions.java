@@ -13,8 +13,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
 
-public class MouseActions implements MouseMotionListener, MouseListener ,IObservable {
-	
+/**
+ * 
+ * @author Henri DESOBRY
+ *
+ */
+public class MouseActions implements MouseMotionListener, MouseListener ,IObservable
+{	
 	private ArrayList<AbstractBasePanel> all;
 	private ObserverManager _observerManager;
 	

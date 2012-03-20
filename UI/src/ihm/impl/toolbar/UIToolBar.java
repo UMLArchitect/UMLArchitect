@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JToolBar;
 
+/**
+ * 
+ * @author Kossi
+ *
+ */
 public class UIToolBar extends JToolBar{
 	/**
 	 * 

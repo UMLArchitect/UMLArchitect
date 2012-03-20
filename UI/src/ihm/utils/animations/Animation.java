@@ -8,11 +8,16 @@ import javax.swing.Timer;
 
 import ihm.utils.animations.ReturnToOriginAnimation;
 
-public class Animation {
-	
+/**
+ * 
+ * @author Henri DESOBRY
+ *
+ */
+public class Animation 
+{	
 	public static void returnToOrigin(Component c,Rectangle rect, int inter, int nb_inter, Point p)
 	{
-		Timer t = new Timer(inter, null);;
+		Timer t = new Timer(inter, null);
 		ReturnToOriginAnimation l = new ReturnToOriginAnimation(t, c,rect,nb_inter,p);
 		t.addActionListener(l);
 		t.start();

@@ -6,8 +6,8 @@ import ihm.abstracts.AbstractBasePanel;
 import java.awt.Component;
 import java.util.List;
 
-public class Collisions {
-	
+public class Collisions 
+{	
 	public static boolean isCollision(Component toto,List<AbstractBasePanel> all){
 		for (Component t : all)
 		{
@@ -20,11 +20,10 @@ public class Collisions {
 		return false;
 	}
 	
-	private static boolean isIntersect(Component a, Component b){
+	private static boolean isIntersect(Component a, Component b)
+	{
 		if(a.equals(b))
 				return false;
 		return a.getBounds().intersects(b.getBounds());
 	}
-	
-
 }

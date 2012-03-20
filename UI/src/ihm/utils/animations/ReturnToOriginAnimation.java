@@ -8,6 +8,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
+/**
+ * @author Henri DESOBRY
+ *
+ */
 public class ReturnToOriginAnimation implements ActionListener {
 
 	Component c;
@@ -18,6 +22,14 @@ public class ReturnToOriginAnimation implements ActionListener {
 	float inter_Y;
 	Point p;
 	
+	/**
+	 * 
+	 * @param t
+	 * @param c
+	 * @param rect
+	 * @param nb
+	 * @param p
+	 */
 	public ReturnToOriginAnimation(Timer t, Component c, Rectangle rect, int nb, Point p)
 	{
 		this.t = t;
@@ -28,8 +40,6 @@ public class ReturnToOriginAnimation implements ActionListener {
 		inter_Y = (rect.y -c.getY()-p.y)/nb_inter;
 		
 	}
-	
-	
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
@@ -42,5 +52,4 @@ public class ReturnToOriginAnimation implements ActionListener {
 		c.setBounds((int)(c.getX()+inter_X), (int)(c.getY() + inter_Y),c.getWidth(),c.getHeight());
 		c.getParent().repaint();
 	}
-
 }

@@ -1,6 +1,10 @@
 package ihm.interfaces;
 
-
+/**
+ * 
+ * @author Julien Sarazin
+ *
+ */
 public interface IObserverManager {
 	
 	public void update(IObservable observable, String flag);

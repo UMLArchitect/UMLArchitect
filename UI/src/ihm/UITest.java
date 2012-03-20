@@ -6,6 +6,11 @@ import ihm.impl.listeners.MouseActions;
 
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author Henri DESOBRY
+ *
+ */
 public class UITest extends JFrame {
 
 	/**

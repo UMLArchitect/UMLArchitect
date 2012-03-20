@@ -8,6 +8,11 @@ import java.awt.event.*;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
+/**
+ * 
+ * @author Kossi SODATONOU
+ *
+ */
 public class RightClickPopupMenuListener implements ActionListener, PopupMenuListener{
 	public Frame myFrame;
 	public MouseEvent ME; // Contains the mouseEvent for the UMLComponent position

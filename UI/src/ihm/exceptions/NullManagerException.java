@@ -1,5 +1,11 @@
 package ihm.exceptions;
 
+
+/**
+ * 
+ * @author Julien SARAZIN
+ *
+ */
 public class NullManagerException extends Throwable {
 
 	/**

@@ -8,6 +8,11 @@ import java.awt.event.MouseEvent;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
+/**
+ * 
+ * @author Kossi SODATONOU
+ *
+ */
 public class RightClickPopupMenuListenerOnComponent implements ActionListener, PopupMenuListener {
 
 	public Frame myFrame;

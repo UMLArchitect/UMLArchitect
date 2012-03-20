@@ -2,7 +2,11 @@ package ihm.interfaces;
 
 
 
-
+/**
+ * 
+ * @author Julien SARAZIN
+ *
+ */
 public interface IObserver{
 
 	// Set the observerManager
