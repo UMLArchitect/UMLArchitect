@@ -17,14 +17,14 @@ public abstract class AbstractBasePanel extends JPanel {
 	/**
 	 * Adapter attached to the panel to handle the event raised on the panel
 	 */
-	private IBaseAdapter adapter;
+	private IBaseAdapter _adapter;
 	
 	/**
 	 * Return the adapter attached to the Panel
 	 * @return The adapter
 	 */
 	public IBaseAdapter getAdapter() {
-		return adapter;
+		return _adapter;
 	}
 	
 	/**
@@ -32,6 +32,6 @@ public abstract class AbstractBasePanel extends JPanel {
 	 * @param a the adapter to set
 	 */
 	public void setAdapter(IBaseAdapter a) {
-		adapter = a;
+		_adapter = a;
 	}
 }

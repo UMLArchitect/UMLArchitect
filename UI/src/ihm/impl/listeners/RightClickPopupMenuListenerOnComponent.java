@@ -15,14 +15,14 @@ import javax.swing.event.PopupMenuListener;
  */
 public class RightClickPopupMenuListenerOnComponent implements ActionListener, PopupMenuListener {
 
-	public Frame myFrame;
-	public MouseEvent ME; // Contains the mouseEvent for the UMLComponent position
+	public Frame _myFrame;
+	public MouseEvent _ME; // Contains the mouseEvent for the UMLComponent position
 	
 	public RightClickPopupMenuListenerOnComponent(Frame myFrame,MouseEvent e)
 	{
 		super();
-		this.myFrame = myFrame;
-		this.ME = e; 
+		this._myFrame = myFrame;
+		this._ME = e; 
 	}
 	
 	@Override
@@ -31,7 +31,7 @@ public class RightClickPopupMenuListenerOnComponent implements ActionListener, P
 		if(e.getActionCommand().toString() == "Delete uml component")
 		{
 			System.out.println("** Tentative de suppression **");
-			myFrame.repaint(); // refresh the view
+			_myFrame.repaint(); // refresh the view
 		}
 	}
 	

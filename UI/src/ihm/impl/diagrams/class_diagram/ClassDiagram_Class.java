@@ -22,37 +22,37 @@ public class ClassDiagram_Class extends AbstractBasePanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel internalPanel;
-	JPanel c ;
-	JPanel h;
-    private JTextField textField;
+	private JPanel _internalPanel;
+	private JPanel _c ;
+	private JPanel _h;
+    private JTextField _textField;
     
 	  public ClassDiagram_Class(){
 		  
 		  super();
 		  this.setLayout(null);
-	      this.internalPanel = new JPanel();
-	      this.internalPanel.setLayout(new BorderLayout());
+	      this._internalPanel = new JPanel();
+	      this._internalPanel.setLayout(new BorderLayout());
 	      setAdapter(new ClassDiagram_ClassAdapter());
 	      
-		  h = new JPanel();
-		  c = new JPanel();
+		  _h = new JPanel();
+		  _c = new JPanel();
 
-        this.textField = new JTextField("Classe");
-		  textField.setBounds(0, 0, getWidth(), getHeight());
-		  h.setLayout(new BorderLayout());
-		  c.setBackground(Color.white);
-		  h.setBackground(Color.white);
-		  c.setBorder(BorderFactory.createLineBorder(Color.black));
-		  h.setBorder(BorderFactory.createLineBorder(Color.black));
-		  h.add(textField);
+        this._textField = new JTextField("Classe");
+		  _textField.setBounds(0, 0, getWidth(), getHeight());
+		  _h.setLayout(new BorderLayout());
+		  _c.setBackground(Color.white);
+		  _h.setBackground(Color.white);
+		  _c.setBorder(BorderFactory.createLineBorder(Color.black));
+		  _h.setBorder(BorderFactory.createLineBorder(Color.black));
+		  _h.add(_textField);
 
-		  h.setBounds(0, 0,(int) getWidth(), (int) getHeight()/5);
-		  c.setBounds(0, (int) getHeight()/5,(int) getWidth(), (int) (4*getHeight()/5));
-		  this.internalPanel.add(c,BorderLayout.CENTER);
-		  this.internalPanel.add(h,BorderLayout.NORTH);
-		  internalPanel.setBackground(Color.white);
-		  this.add(this.internalPanel);
+		  _h.setBounds(0, 0,(int) getWidth(), (int) getHeight()/5);
+		  _c.setBounds(0, (int) getHeight()/5,(int) getWidth(), (int) (4*getHeight()/5));
+		  this._internalPanel.add(_c,BorderLayout.CENTER);
+		  this._internalPanel.add(_h,BorderLayout.NORTH);
+		  _internalPanel.setBackground(Color.white);
+		  this.add(this._internalPanel);
 		  
 	  }
 	  
@@ -64,10 +64,10 @@ public class ClassDiagram_Class extends AbstractBasePanel{
 
 		private void internalBounds() {
 			 Rectangle r = this.getBounds();
-	        this.internalPanel.setBounds(0, 0, (int) r.getWidth(), (int) r.getHeight());
-			h.setBounds(0, 0,(int) r.getWidth(), (int) r.getHeight()/5);
-	        c.setBounds(0, (int) r.getHeight()/5,(int) r.getWidth(), (int) (4*r.getHeight()/5));
-	        internalPanel.repaint();
+	        this._internalPanel.setBounds(0, 0, (int) r.getWidth(), (int) r.getHeight());
+			_h.setBounds(0, 0,(int) r.getWidth(), (int) r.getHeight()/5);
+	        _c.setBounds(0, (int) r.getHeight()/5,(int) r.getWidth(), (int) (4*r.getHeight()/5));
+	        _internalPanel.repaint();
 	        this.repaint();
 		}
 }

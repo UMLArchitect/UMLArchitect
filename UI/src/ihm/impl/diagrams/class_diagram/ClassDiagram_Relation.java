@@ -23,20 +23,20 @@ public class ClassDiagram_Relation extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel internalPanel;
-    private CircleDraw c;
+	private JPanel _internalPanel;
+    private CircleDraw _c;
     
 	  public ClassDiagram_Relation(){
 		  super();
 		  this.setLayout(null);
-	      this.internalPanel = new JPanel();
-	      this.internalPanel.setLayout(new BorderLayout());
-	      c= new CircleDraw();
-	      c.setBounds(0, 0, getWidth(), getHeight());
-	      c.repaint();
-	      internalPanel.add(c,BorderLayout.CENTER);
-		  internalPanel.setBackground(Color.white);
-		  this.add(this.internalPanel);
+	      this._internalPanel = new JPanel();
+	      this._internalPanel.setLayout(new BorderLayout());
+	      _c= new CircleDraw();
+	      _c.setBounds(0, 0, getWidth(), getHeight());
+	      _c.repaint();
+	      _internalPanel.add(_c,BorderLayout.CENTER);
+		  _internalPanel.setBackground(Color.white);
+		  this.add(this._internalPanel);
 		  
 	  }
 	  
@@ -48,15 +48,13 @@ public class ClassDiagram_Relation extends JPanel{
 
 		private void internalBounds() {
 			 Rectangle r = this.getBounds();
-	        this.internalPanel.setBounds(0, 0, (int) r.getWidth(), (int) r.getHeight());
-	        internalPanel.repaint();
+	        this._internalPanel.setBounds(0, 0, (int) r.getWidth(), (int) r.getHeight());
+	        _internalPanel.repaint();
 	        this.repaint();
 		}
 
 		public class CircleDraw extends JPanel {
-			  /**
-			 * 
-			 */
+
 			private static final long serialVersionUID = 1L;
 			Shape circle = new Ellipse2D.Float(100.0f, 100.0f, 100.0f, 100.0f);
 			  Shape square = new Rectangle2D.Double(100, 100,100, 100);

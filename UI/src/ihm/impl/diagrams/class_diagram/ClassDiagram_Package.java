@@ -20,41 +20,41 @@ public class ClassDiagram_Package extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel internalPanel;
-	JPanel c ;
-	JPanel h;
-	JPanel hg;
-    private JTextField textField;
+	private JPanel _internalPanel;
+	private JPanel _c ;
+	private JPanel _h;
+	private JPanel _hg;
+    private JTextField _textField;
     
 	  public ClassDiagram_Package(){
 		  super();
 		  this.setLayout(null);
-	      this.internalPanel = new JPanel();
-	      this.internalPanel.setLayout(new BorderLayout());
+	      this._internalPanel = new JPanel();
+	      this._internalPanel.setLayout(new BorderLayout());
 	      
-		  h = new JPanel();
-		  hg = new JPanel();
+		  _h = new JPanel();
+		  _hg = new JPanel();
 		  JPanel hd = new JPanel();
-		  c = new JPanel();
+		  _c = new JPanel();
 
-        this.textField = new JTextField("Package");
+        this._textField = new JTextField("Package");
 		  
-		  h.setLayout(new BorderLayout());
-		  hg.setBackground(Color.cyan);
+		  _h.setLayout(new BorderLayout());
+		  _hg.setBackground(Color.cyan);
 
-		  hg.setBorder(BorderFactory.createLineBorder(Color.black));
+		  _hg.setBorder(BorderFactory.createLineBorder(Color.black));
 		  hd.setBackground(Color.white);
-		  c.setBackground(Color.cyan);
-		  c.setLayout(new BorderLayout());
-		  h.add(hg,BorderLayout.WEST);
-		  h.add(hd,BorderLayout.CENTER);
-		  h.setBackground(Color.white);
-		  this.internalPanel.add(h,BorderLayout.NORTH);
-		  c.add(this.textField,BorderLayout.NORTH);
-		  c.setBorder(BorderFactory.createLineBorder(Color.black));
-		  this.internalPanel.add(c,BorderLayout.CENTER);
-		  internalPanel.setBackground(Color.white);
-		  this.add(this.internalPanel);
+		  _c.setBackground(Color.cyan);
+		  _c.setLayout(new BorderLayout());
+		  _h.add(_hg,BorderLayout.WEST);
+		  _h.add(hd,BorderLayout.CENTER);
+		  _h.setBackground(Color.white);
+		  this._internalPanel.add(_h,BorderLayout.NORTH);
+		  _c.add(this._textField,BorderLayout.NORTH);
+		  _c.setBorder(BorderFactory.createLineBorder(Color.black));
+		  this._internalPanel.add(_c,BorderLayout.CENTER);
+		  _internalPanel.setBackground(Color.white);
+		  this.add(this._internalPanel);
 		  
 	  }
 	  
@@ -66,11 +66,11 @@ public class ClassDiagram_Package extends JPanel{
 
 		private void internalBounds() {
 			 Rectangle r = this.getBounds();
-	        this.internalPanel.setBounds(0, 0, (int) r.getWidth(), (int) r.getHeight());
-			h.setBounds(0, 0,(int) r.getWidth(), 10);
-			hg.setBounds(0,0,(int)r.getWidth()/2,10);
-	        c.setBounds(0,10,(int) r.getWidth(), (int) r.getHeight()-10);
-	        internalPanel.repaint();
+	        this._internalPanel.setBounds(0, 0, (int) r.getWidth(), (int) r.getHeight());
+			_h.setBounds(0, 0,(int) r.getWidth(), 10);
+			_hg.setBounds(0,0,(int)r.getWidth()/2,10);
+	        _c.setBounds(0,10,(int) r.getWidth(), (int) r.getHeight()-10);
+	        _internalPanel.repaint();
 	        this.repaint();
 		}
 }

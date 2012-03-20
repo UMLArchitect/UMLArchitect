@@ -9,12 +9,21 @@ import javax.swing.Timer;
 import ihm.utils.animations.ReturnToOriginAnimation;
 
 /**
- * 
+ * This class will contain a static method for each animation we need to implement
  * @author Henri DESOBRY
  *
  */
 public class Animation 
 {	
+	
+	/**
+	 * This static method provide an animation : the component goes from its position to its original position.
+	 * @param c : the component
+	 * @param rect : Original position
+	 * @param inter : time between every intermediate position
+	 * @param nb_inter : number of intermediate position
+	 * @param p : Position of the mouse
+	 */
 	public static void returnToOrigin(Component c,Rectangle rect, int inter, int nb_inter, Point p)
 	{
 		Timer t = new Timer(inter, null);

@@ -9,47 +9,65 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 /**
+ * This class provides the return to origin animation
  * @author Henri DESOBRY
  *
  */
 public class ReturnToOriginAnimation implements ActionListener {
 
-	Component c;
-	float nb_inter;
-	int nb_event = 0;
-	Timer t;
-	float inter_X;
-	float inter_Y;
-	Point p;
+	/**
+	 * Component on which the animation is performed
+	 */
+	private Component _c;
+	/**
+	 * Number of intermediate positions
+	 */
+	private float _nb_inter;
+	/**
+	 * Number of events already raised
+	 */
+	private int _nb_event = 0;
+	/**
+	 * Timer which provide the trigger
+	 */
+	private Timer _t;
+	/**
+	 * X interval between two intermediate positions
+	 */
+	private float _inter_X;
+	/**
+	 * Y interval between two intermediate positions
+	 */
+	private float _inter_Y;
+
 	
 	/**
-	 * 
-	 * @param t
-	 * @param c
-	 * @param rect
-	 * @param nb
-	 * @param p
+	 * Contructor of class ReturnToOriginAnaimation
+	 * @param t : Timer
+	 * @param c : the component
+	 * @param rect : Original position
+	 * @param nb : number of intermediate position
+	 * @param p : Position of the mouse
 	 */
 	public ReturnToOriginAnimation(Timer t, Component c, Rectangle rect, int nb, Point p)
 	{
-		this.t = t;
-		this.c=c;
-		this.nb_inter = 1;
-		this.p = p;
-		inter_X = (rect.x -c.getX()-p.x)/nb_inter;
-		inter_Y = (rect.y -c.getY()-p.y)/nb_inter;
+		this._t = t;
+		this._c=c;
+		this._nb_inter = 1;
+		_inter_X = (rect.x -c.getX()-p.x)/_nb_inter;
+		_inter_Y = (rect.y -c.getY()-p.y)/_nb_inter;
 		
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
 	{
-		nb_event++;
-		if (nb_event == nb_inter)
+		_nb_event++;
+		if (_nb_event == _nb_inter)
 		{
-			t.stop();
+			_t.stop();
 		}
-		c.setBounds((int)(c.getX()+inter_X), (int)(c.getY() + inter_Y),c.getWidth(),c.getHeight());
-		c.getParent().repaint();
+		_c.setBounds((int)(_c.getX()+_inter_X), (int)(_c.getY() + _inter_Y),_c.getWidth(),_c.getHeight());
+		_c.getParent().repaint();
 	}
 }

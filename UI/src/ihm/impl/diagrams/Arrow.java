@@ -16,97 +16,98 @@ public class Arrow extends JPanel
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel src;
-    private JPanel dest;
+	private JPanel _src;
+    private JPanel _dest;
 
-    private int xsrc, ysrc, xdest, ydest;
+    private int _xsrc, _ysrc, _xdest, _ydest;
+    private boolean _inix=false;
+    private boolean _iniy=false;
 
     public Arrow(JPanel src, JPanel dest)
     {
-        this.src = src;
-        this.dest = dest;
+        this._src = src;
+        this._dest = dest;
         this.setOpaque(false);
 //        ((FlyingCase) this.src).getArrowsSource().addObject(this);
 //        ((FlyingCase) this.dest).getArrowsDest().addObject(this);
     }
 
-    public JPanel getSource() { return this.src; }
-    public JPanel getDest() { return this.dest; }
-    private boolean inix=false;
-    private boolean iniy=false;
+    public JPanel getSource() { return this._src; }
+    public JPanel getDest() { return this._dest; }
+    
     
     public void requestRedraw()
     {
-        Rectangle r1 = this.src.getBounds();
-        Rectangle r2 = this.dest.getBounds();
+        Rectangle r1 = this._src.getBounds();
+        Rectangle r2 = this._dest.getBounds();
         int x=0 , y=0, width=0, height=0;
         if((r1.x<(r2.x+r2.width))&&((r1.x+r1.width)>r2.x)){
-        	inix=true;
+        	_inix=true;
         	 if(r1.x < r2.x)
                {
                    x = r1.x;
                    width = r2.x+r2.width/2-r1.x+r1.width/2;
-                   xsrc = r1.width/2;
-                   xdest = width - r1.width/2;
+                   _xsrc = r1.width/2;
+                   _xdest = width - r1.width/2;
                }
                else
                {
                    x = r2.x;
                    width = r1.x+r1.width/2-r2.x+r2.width/2;
-                   xsrc = width - r2.width/2;
-                   xdest = r2.width/2;
+                   _xsrc = width - r2.width/2;
+                   _xdest = r2.width/2;
                }
         }
         else{
-        	inix=false;
+        	_inix=false;
 	        if(r1.x < r2.x)
 	        {
 	            x = r1.x;
 	            width = r2.x-r1.x+r1.width;
-	            xsrc = r1.width;
-	            xdest = width - r1.width;
+	            _xsrc = r1.width;
+	            _xdest = width - r1.width;
 	        }
 	        else
 	        {
 	            x = r2.x;
 	            width = r1.x-r2.x+r1.width;
-	            xsrc = width - r1.width;
-	            xdest = r2.width;
+	            _xsrc = width - r1.width;
+	            _xdest = r2.width;
 	        }
         }
         if((r1.y<(r2.y+r2.height))&&((r1.y+r1.height)>r2.y)){
-        	iniy=true;
+        	_iniy=true;
 	        if(r1.y < r2.y)
 	        {
 	            y = r1.y;
 	            height = r2.y+r2.height/2-r1.y+r1.height/2;
-	            ysrc = r1.height/2;
-	            ydest = height - r1.height/2;
+	            _ysrc = r1.height/2;
+	            _ydest = height - r1.height/2;
 	        }
 	        else
 	        {
 	            y = r2.y;
 	            height = r1.y+r1.height/2-r2.y+r2.height/2;
-	            ysrc = height - r2.height/2;
-	            ydest = r2.height/2;
+	            _ysrc = height - r2.height/2;
+	            _ydest = r2.height/2;
 	        }
         }
         else
         {    
-        	iniy=false;
+        	_iniy=false;
         	if(r1.y < r2.y)
 	        {
 	            y = r1.y;
 	            height = r2.y-r1.y+r1.height;
-	            ysrc = r1.height;
-	            ydest = height - r1.height;
+	            _ysrc = r1.height;
+	            _ydest = height - r1.height;
 	        }
 	        else
 	        {
 	            y = r2.y;
 	            height = r1.y-r2.y+r1.height;
-	            ysrc = height - r1.height;
-	            ydest = r2.height;
+	            _ysrc = height - r1.height;
+	            _ydest = r2.height;
 	        }
         }
         this.setBounds(x, y, width, height);
@@ -118,7 +119,7 @@ public class Arrow extends JPanel
     {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-        this.drawArrow(g2, xsrc, ysrc, xdest, ydest);
+        this.drawArrow(g2, _xsrc, _ysrc, _xdest, _ydest);
 
     }
     
@@ -154,7 +155,7 @@ public class Arrow extends JPanel
         xPoints[2] = (int)(baseX-th*vecLeft[0]);
         yPoints[2] = (int)(baseY-th*vecLeft[1]);
         
-        if(!inix&&!iniy){
+        if(!_inix&&!_iniy){
             g.drawLine(x,y,(int)baseX,y);
             g.drawLine((int)baseX,y,(int)baseX,(int)baseY);
         }

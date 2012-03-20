@@ -7,7 +7,7 @@ import ihm.impl.listeners.MouseActions;
 import javax.swing.JFrame;
 
 /**
- * 
+ * This class provides a general container to do some visual tests
  * @author Henri DESOBRY
  *
  */
