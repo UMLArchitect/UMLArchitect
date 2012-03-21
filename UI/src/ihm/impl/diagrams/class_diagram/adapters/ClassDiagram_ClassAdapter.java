@@ -47,7 +47,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 		_rect = c.getBounds();
 		_MouseX = e.getComponent().getMousePosition().x;
 		_MouseY = e.getComponent().getMousePosition().y;
-		System.out.println("rectX "+_rect.x +" rectY "+_rect.y+" MouseX "+ _MouseX + " MouseY "+_MouseY);
+		//System.out.println("rectX "+_rect.x +" rectY "+_rect.y+" MouseX "+ _MouseX + " MouseY "+_MouseY);
 		_rect.x+=_MouseX;
 		_rect.y+=_MouseY;
 		
@@ -56,7 +56,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 
 	@Override
 	public void mouseReleased(ArrayList<AbstractBasePanel> all, AbstractBasePanel c, MouseEvent e) {
-		System.out.println("rectX "+c.getBounds().x +" rectY "+c.getBounds().y+" MouseX "+e.getComponent().getMousePosition().x + " MouseY "+e.getComponent().getMousePosition().y);
+		//System.out.println("rectX "+c.getBounds().x +" rectY "+c.getBounds().y+" MouseX "+e.getComponent().getMousePosition().x + " MouseY "+e.getComponent().getMousePosition().y);
 		_p.setLocation(_MouseX+e.getComponent().getParent().getX(),_MouseY+e.getComponent().getParent().getY());
 		if(Collisions.isCollision(c, all))
 		{
