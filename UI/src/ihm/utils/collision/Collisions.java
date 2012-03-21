@@ -7,8 +7,9 @@ import java.awt.Component;
 import java.util.List;
 /**
  * This class provide the detection of collision between two items
- * @author Henri DESOBRY
- *
+ * @author Henri DESOBRY hdesobry@gmail.com
+ * @version 1.0
+ * @created at 16/02/2012
  */
 
 public class Collisions 

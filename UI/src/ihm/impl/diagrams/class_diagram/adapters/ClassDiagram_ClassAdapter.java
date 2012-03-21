@@ -13,8 +13,9 @@ import java.util.ArrayList;
 
 /**
  * this class is the adapter attached to every ClassDiagram_Class
- * @author Henri DESOBRY
- *
+ * @author Henri DESOBRY hdesobry@gmail.com
+ * @version 1.0
+ * @created at 16/02/2012
  */
 public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 	

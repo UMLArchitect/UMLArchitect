@@ -16,7 +16,7 @@ import javax.swing.SwingUtilities;
 /**
  * This class will be the listener which catches the mouse event and then dispatch to the right adapter
  * @author Henri DESOBRY
- *
+ * @version 1.0
  */
 public class MouseActions implements MouseMotionListener, MouseListener ,IObservable
 {	

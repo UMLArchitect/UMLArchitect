@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * This interface is the base for every adapter needed to handle the mouse events.
  * @author Henri DESOBRY
- *
+ * @version 1.0
  */
 public interface IBaseAdapter {
 	

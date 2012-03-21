@@ -10,7 +10,9 @@ import ihm.utils.animations.ReturnToOriginAnimation;
 
 /**
  * This class will contain a static method for each animation we need to implement
- * @author Henri DESOBRY
+ * @author Henri DESOBRY hdesobry@gmail.com
+ * @version 1.0
+ * @created at 16/02/2012
  *
  */
 public class Animation 

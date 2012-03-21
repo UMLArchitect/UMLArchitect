@@ -8,8 +8,9 @@ import ihm.interfaces.IBaseAdapter;
 
 /**
  * 
- * @author Henri DESOBRY
- *
+ * @author Henri DESOBRY hdesobry@gmail.com
+ * @version 1.0
+ * @created at 16/02/2012
  */
 public class PackageDiagram_PackageAdapter implements IBaseAdapter {
 

@@ -6,8 +6,9 @@ import javax.swing.JPanel;
 
 /**
  * This abstract class will be the base class every composant of each diagram.
- * @author Henri DESOBRY
- *
+ * @author Henri DESOBRY hdesobry@gmail.com
+ * @version 1.0
+ * @created at 16/02/2012
  */
 public abstract class AbstractBasePanel extends JPanel {
 
