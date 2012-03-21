@@ -1,0 +1,24 @@
+ARCHITECTURE DES PACKAGES :
+
+
+
+Les packages ABSTRACTS et INTERFACES contiennent les classes abstraites et les interfaces qui serviront de bases communes de code. 
+
+Le package EXCEPTIONS contient les exceptions utilisées dans le projet.
+
+Le package UTILS contient les classes qui implémentent les fonctionnalités qui peuvent être utilisées plusieurs fois dans le projet (Animations, Dictionnaires, ...)
+
+Le package IMPL contient la réelle implémentation du projet :
+	_ LISTENERS : Les adapters ou listeners des événements de la souris ou du clavier.
+	_ NOTIFICATIONS : le notification center et ce qui s'y rapporte
+	_ TOOLBAR : Les classes composant la toolbar
+	_ PROPERTYBAR : Les classes composant la property bar
+	_ DIAGRAMS : Un package est crée par diagramme UML 
+					et dans chaque package de diagramme on trouve les classes correspondant aux artefacts UML 
+					et un sous-package qui contient les adapters associés à chaque artefact. 
+
+La classe UITest fournit une fenêtre de test pour les affichages ou les interactions de la souris avec l'UI.
+	
+	
+author : Henri DESOBRY hdesobry@gmail.com
+created at : 21/03/2012

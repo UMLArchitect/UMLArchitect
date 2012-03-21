@@ -1,0 +1,8 @@
+EXPLICATION CHOIX ARCHITECTURE :
+
+Pour gérer les évènements générés par les interactions de l'utilisateur sur l'UI, nous avons mis en place deux méthodes :
+	_ Pour toutes les interactions exécutées sur les dessins des artefacts UML, nous utilisons un listener global des MouseEvent qui les dispatache sur les 
+			adapter associés à l'élement cliqué.
+	_ Pour les interactions sur les boutons des property bar et tool bar, un observer manager avec des observables.
+
+
