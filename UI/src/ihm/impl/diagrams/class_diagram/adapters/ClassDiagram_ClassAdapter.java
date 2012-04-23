@@ -61,7 +61,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 		_p.setLocation(_MouseX+e.getComponent().getParent().getX(),_MouseY+e.getComponent().getParent().getY());
 		if(Collisions.isCollision(c, all))
 		{
-			Animation.returnToOrigin(c, _rect, 10, 100, _p);
+			Animation.returnToOrigin(c, _rect, 100, 100, _p);
 		}
 		
 	}
