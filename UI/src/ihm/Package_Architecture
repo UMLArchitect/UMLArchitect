@@ -15,7 +15,7 @@ Le package IMPL contient la réelle implémentation du projet :
 	_ PROPERTYBAR : Les classes composant la property bar
 	_ DIAGRAMS : Un package est crée par diagramme UML 
 					et dans chaque package de diagramme on trouve les classes correspondant aux artefacts UML 
-					et un sous-package qui contient les adapters associés à chaque artefact. 
+					et un sous-package qui contient les adapters associés Ã  chaque artefact. 
 
 La classe UITest fournit une fenêtre de test pour les affichages ou les interactions de la souris avec l'UI.
 	
