@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.essilab.umlizer.plugin.preferences.SamplePreferencePage"
+            id="org.essilab.umlizer.plugin.preferences.SamplePreferencePage"
+            name="Sample Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.essilab.umlizer.plugin.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+</plugin>
