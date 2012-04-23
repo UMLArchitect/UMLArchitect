@@ -17,11 +17,13 @@ public class RightClickPopupMenuListener implements ActionListener, PopupMenuLis
 	
 	public Frame _myFrame;
 	public MouseEvent _ME; // Contains the mouseEvent for the UMLComponent position
+	public Component _currentComponent;
 	
 	public RightClickPopupMenuListener(Component component,MouseEvent e)
 	{
 		super();
-		this._myFrame = (Frame)component;
+		this._myFrame = new Frame();
+		this._currentComponent = component;
 		this._ME = e; 
 	}
 
