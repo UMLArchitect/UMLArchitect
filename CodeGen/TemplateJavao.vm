@@ -1,0 +1,31 @@
+#set($extends="")
+#set($implements="")
+#if($object.getHeritage()!="")
+#set($extends="extends "+$object.getHeritage())
+#end
+#if($object.getImplementations().size() > 0) 
+#set($implements="implements ")
+#set($c=$object.getImplementations().size())
+#set( $c = $c - 1 )
+#foreach ($impl in $object.getImplementations())
+#set($implements = $implements+$impl)
+#if($c != 0)
+#set($implements = $implements+", ")
+#end
+#set( $c = $c - 1 )
+#end
+#end
+#set( $c = $object.getModifiers().size())
+#set( $c = $c-1 )
+#set( $modifers = "" )
+#foreach ( $modifier in $object.getModifiers() )
+#set( $modifiers = $modifiers+$modifier ) #if($c != 0 )#set( $modifiers = $modifiers + " " )#end
+#end
+$modifers $object.getVisibility() $object.getType() $object.getName() $extends $implements {
+
+#foreach ($field in $object.getFields())
+#set ($fieldValue = $field.getValue())
+	$field.getVisibility() $field.getType() $field.getName() #if($fieldValue != "") = $fieldValue#end;
+#end
+
+}

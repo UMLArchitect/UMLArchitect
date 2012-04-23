@@ -1,0 +1,55 @@
+#set($extends="")
+#set($implements="")
+#if($class.getHeritage()!="")
+#set($extends="extends "+$class.getHeritage())
+#end
+#if($class.getImplementations().size() > 0) 
+#set($implements="implements ")
+#set($c=$class.getImplementations().size())
+#set( $c = $c - 1)
+#foreach ($impl in $class.getImplementations())
+#set($implements = $implements+$impl)
+#if($c != 0)#set($implements = $implements+", ")#end
+#set( $c = $c - 1)
+#end
+#end
+#set( $c = $class.getModifiers().size())
+#set( $c = $c - 1)
+#set( $modifiers = "" )
+#foreach ( $modifier in $class.getModifiers() )
+#set( $modifiers = $modifiers+$modifier )
+#if($c != 0 )#set( $modifiers = $modifiers+" " )#end
+#set($c = $c - 1)
+#end
+#if( $class.getPath() != "" )
+package $class.getPath()
+#end
+
+$modifiers $v $class.getIdentifier() $extends $implements {
+
+#foreach ($field in $class.getFields())
+#set( $fieldValue = $field.getValue())
+#set( $c = $field.getModifiers().size())
+#set( $c = $c - 1)
+#set( $modifiers = "" )
+#foreach ( $modifier in $field.getModifiers() )
+#set( $modifiers = $modifiers+$modifier )
+#set($c = $c - 1)
+#end
+	#if($modifiers != "")$modifiers #end$field.getType2()#if($field.isArray())[]#end $field.getIdentifier()#if($fieldValue != "") = #if($field.getType2().equals("String") || $field.getType2().equals("string"))"$fieldValue"#elseif($field.getType2().equals("char"))'$fieldValue'#else$fieldValue#end#end;
+#end
+
+#foreach ($method in $class.getMethods())
+#set( $c = $method.getModifiers().size())
+#set( $c = $c - 1)
+#set( $modifiers = "" )
+#foreach ( $modifier in $method.getModifiers() )
+#set( $modifiers = $modifiers+$modifier )
+#if($c != 0 )#set( $modifiers = $modifiers+" " )#end
+#set($c = $c - 1)
+#end
+	$modifiers $method.getReturnType() $method.getIdentifier()(#set($c = $method.getParameters().size())#set($c = $c - 1)#foreach ($parameter in $method.getParameters())$parameter.getType2() $parameter.getIdentifier()#if($c != 0), #end#set($c = $c - 1 )#end){
+		$method.getContent()
+	}
+#end
+}

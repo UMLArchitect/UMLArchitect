@@ -1,0 +1,28 @@
+#*
+** Main Template For Class and Abstract classes
+*#
+
+
+/**
+ * 
+ * @author $author
+ *
+ */
+
+class $myClass.getName() extends Object {
+ 
+#foreach ($field in $myClass.getFields())
+  private $field.getType() $field.getName();
+#end
+
+#foreach ($method in $myClass.getMethods())
+  $method.getVisibility() $method.getReturnValue() $method.getName()(
+ 	#foreach ($param in $method.getParams())
+ 		$param.getType() $param.getName()
+ 	#end)
+{
+
+}
+#end
+
+}
