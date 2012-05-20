@@ -1,6 +1,8 @@
 package ihm.utils.collision;
 
 import ihm.abstracts.AbstractBasePanel;
+import ihm.impl.diagrams.arrows.Arrow;
+import ihm.impl.diagrams.utils.PointNoir;
 
 
 import java.awt.Component;
@@ -23,6 +25,8 @@ public class Collisions
 	public static boolean isCollision(Component comp,List<AbstractBasePanel> all){
 		for (Component t : all)
 		{
+			if((t instanceof Arrow) ||(t instanceof PointNoir))
+				return false;
 			if(isIntersect(comp,t))
 			{
 				return true;

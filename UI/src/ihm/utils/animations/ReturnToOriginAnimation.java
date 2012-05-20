@@ -1,5 +1,7 @@
 package ihm.utils.animations;
 
+import ihm.impl.diagrams.arrows.Arrow;
+
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -54,7 +56,7 @@ public class ReturnToOriginAnimation implements ActionListener {
 	{
 		this._t = t;
 		this._c=c;
-		this._nb_inter = 1;
+		this._nb_inter = nb;
 		_inter_X = (rect.x -c.getX()-p.x)/_nb_inter;
 		_inter_Y = (rect.y -c.getY()-p.y)/_nb_inter;
 		
@@ -70,5 +72,11 @@ public class ReturnToOriginAnimation implements ActionListener {
 		}
 		_c.setBounds((int)(_c.getX()+_inter_X), (int)(_c.getY() + _inter_Y),_c.getWidth(),_c.getHeight());
 		_c.getParent().repaint();
+		for (Component b : _c.getParent().getComponents()){
+			if (b instanceof Arrow) {
+				//fait a la barbare mais bon...
+				((Arrow) b).requestRedraw();
+			}
+		}
 	}
 }
