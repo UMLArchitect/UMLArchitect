@@ -15,6 +15,7 @@ public class Arrow extends JPanel
     /**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel _src;
     private JPanel _dest;
