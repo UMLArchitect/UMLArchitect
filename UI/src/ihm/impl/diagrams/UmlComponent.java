@@ -23,7 +23,7 @@ public class UmlComponent extends AbstractBasePanel{
 		// TODO Auto-generated constructor stub
 		this.setForeground(new Color(255,0,255));
 		this.setBounds(x,y,100,100);
-		MouseActions ma = new MouseActions();
+		MouseActions ma = new  MouseActions();
         this.addMouseMotionListener(ma);
 		ma.add(this);
         myFrame.add(this);

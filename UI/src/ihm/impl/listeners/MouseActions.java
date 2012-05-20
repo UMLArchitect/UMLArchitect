@@ -20,6 +20,8 @@ import javax.swing.SwingUtilities;
  */
 public class MouseActions implements MouseMotionListener, MouseListener ,IObservable
 {	
+	
+	   private static final MouseActions INSTANCE = new MouseActions();
 	/**
 	 * this list contains all the components created in the global view
 	 */
@@ -44,6 +46,9 @@ public class MouseActions implements MouseMotionListener, MouseListener ,IObserv
 		_all = new ArrayList<AbstractBasePanel>();
 	}
 	
+	 public static MouseActions getInstance(){
+	      return INSTANCE;
+	   }
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {

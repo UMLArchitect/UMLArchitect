@@ -1,8 +1,10 @@
-package ihm.impl.diagrams;
+package ihm.impl.diagrams.utils;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Rectangle;
+
+import ihm.impl.diagrams.arrows.Arrow;
 import ihm.utils.Dictionary;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
