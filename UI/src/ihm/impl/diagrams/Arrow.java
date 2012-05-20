@@ -1,8 +1,11 @@
 package ihm.impl.diagrams;
 
+import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Stroke;
+
 import javax.swing.JPanel;
 
 /**
@@ -12,106 +15,115 @@ import javax.swing.JPanel;
  */
 public class Arrow extends JPanel
 {
-    /**
-	 * 
-	 */
-	
-	private static final long serialVersionUID = 1L;
-	private JPanel _src;
-    private JPanel _dest;
+    private JPanel src;
+    private JPanel dest;
+    public static int style=0;
 
-    private int _xsrc, _ysrc, _xdest, _ydest;
-    private boolean _inix=false;
-    private boolean _iniy=false;
+    private int xsrc, ysrc, xdest, ydest;
+    
+    Stroke drawingStroke = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{9}, 0);
 
     public Arrow(JPanel src, JPanel dest)
     {
-        this._src = src;
-        this._dest = dest;
+        this.src = src;
+        this.dest = dest;
         this.setOpaque(false);
 //        ((FlyingCase) this.src).getArrowsSource().addObject(this);
 //        ((FlyingCase) this.dest).getArrowsDest().addObject(this);
     }
+    public Arrow(JPanel src, JPanel dest,int style)
+    {
+        this.src = src;
+        this.dest = dest;
+        this.setOpaque(false);
+        this.style=style;
+//        ((FlyingCase) this.src).getArrowsSource().addObject(this);
+//        ((FlyingCase) this.dest).getArrowsDest().addObject(this);
+    }
 
-    public JPanel getSource() { return this._src; }
-    public JPanel getDest() { return this._dest; }
+    public JPanel getSource() { return this.src; }
+    public JPanel getDest() { return this.dest; }
+
+    public int[] getPoints() { int[] i={xsrc, ysrc, xdest, ydest};return i; }
     
+    private boolean inix=false;
+    private boolean iniy=false;
     
     public void requestRedraw()
     {
-        Rectangle r1 = this._src.getBounds();
-        Rectangle r2 = this._dest.getBounds();
+        Rectangle r1 = this.src.getBounds();
+        Rectangle r2 = this.dest.getBounds();
         int x=0 , y=0, width=0, height=0;
         if((r1.x<(r2.x+r2.width))&&((r1.x+r1.width)>r2.x)){
-        	_inix=true;
+        	inix=true;
         	 if(r1.x < r2.x)
                {
                    x = r1.x;
                    width = r2.x+r2.width/2-r1.x+r1.width/2;
-                   _xsrc = r1.width/2;
-                   _xdest = width - r1.width/2;
+                   xsrc = r1.width/2;
+                   xdest = width - r1.width/2;
                }
                else
                {
                    x = r2.x;
                    width = r1.x+r1.width/2-r2.x+r2.width/2;
-                   _xsrc = width - r2.width/2;
-                   _xdest = r2.width/2;
+                   xsrc = width - r2.width/2;
+                   xdest = r2.width/2;
                }
         }
         else{
-        	_inix=false;
+        	inix=false;
 	        if(r1.x < r2.x)
 	        {
 	            x = r1.x;
 	            width = r2.x-r1.x+r1.width;
-	            _xsrc = r1.width;
-	            _xdest = width - r1.width;
+	            xsrc = r1.width;
+	            xdest = width - r1.width;
 	        }
 	        else
 	        {
 	            x = r2.x;
 	            width = r1.x-r2.x+r1.width;
-	            _xsrc = width - r1.width;
-	            _xdest = r2.width;
+	            xsrc = width - r1.width;
+	            xdest = r2.width;
 	        }
         }
         if((r1.y<(r2.y+r2.height))&&((r1.y+r1.height)>r2.y)){
-        	_iniy=true;
+        	iniy=true;
 	        if(r1.y < r2.y)
 	        {
 	            y = r1.y;
 	            height = r2.y+r2.height/2-r1.y+r1.height/2;
-	            _ysrc = r1.height/2;
-	            _ydest = height - r1.height/2;
+	            ysrc = r1.height/2;
+	            ydest = height - r1.height/2;
 	        }
 	        else
 	        {
 	            y = r2.y;
 	            height = r1.y+r1.height/2-r2.y+r2.height/2;
-	            _ysrc = height - r2.height/2;
-	            _ydest = r2.height/2;
+	            ysrc = height - r2.height/2;
+	            ydest = r2.height/2;
 	        }
         }
         else
         {    
-        	_iniy=false;
+        	iniy=false;
         	if(r1.y < r2.y)
 	        {
 	            y = r1.y;
 	            height = r2.y-r1.y+r1.height;
-	            _ysrc = r1.height;
-	            _ydest = height - r1.height;
+	            ysrc = r1.height;
+	            ydest = height - r1.height;
 	        }
 	        else
 	        {
 	            y = r2.y;
 	            height = r1.y-r2.y+r1.height;
-	            _ysrc = height - r1.height;
-	            _ydest = r2.height;
+	            ysrc = height - r1.height;
+	            ydest = r2.height;
 	        }
         }
-        this.setBounds(x, y, width, height);
+        this.setBounds(x,y,width, height);
         this.repaint();
     }
 
@@ -120,7 +132,8 @@ public class Arrow extends JPanel
     {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-        this.drawArrow(g2, _xsrc, _ysrc, _xdest, _ydest);
+
+        this.drawArrow(g2, xsrc, ysrc, xdest, ydest);
 
     }
     
@@ -128,15 +141,16 @@ public class Arrow extends JPanel
     {
         float arrowWidth = 10.0f;
         float theta = 0.423f;
-        int[] xPoints = new int[3];
-        int[] yPoints = new int[3];
+        int[] xPoints = new int[4];
+        int[] yPoints = new int[4];
         float[] vecLine = new float[2];
         float[] vecLeft = new float[2];
         float fLength;
         float th;
         float ta;
-        float baseX, baseY;
+        float baseX=xx, baseY=yy;
 
+        if (!(this.dest instanceof PointNoir) && (style==2||style==3||style==4||style==5||style==6||style==7||style==8||style==9)){
         xPoints[0] = xx;
         yPoints[0] = yy;
         vecLine[0] = (float)xPoints[0]-x;
@@ -155,13 +169,36 @@ public class Arrow extends JPanel
         yPoints[1] = (int)(baseY+th*vecLeft[1]);
         xPoints[2] = (int)(baseX-th*vecLeft[0]);
         yPoints[2] = (int)(baseY-th*vecLeft[1]);
-        
-        if(!_inix&&!_iniy){
-            g.drawLine(x,y,(int)baseX,y);
-            g.drawLine((int)baseX,y,(int)baseX,(int)baseY);
+        if (style==6||style==7||style==8||style==9){
+            xPoints[3] = (int)(baseX-th*vecLeft[0]);
+            yPoints[3] = (int)(baseY-th*vecLeft[1]);
+        	baseX = ((float)xPoints[0]-2*ta*vecLine[0]);
+            baseY = ((float)yPoints[0]-2*ta*vecLine[1]);
+        	xPoints[2] = (int)(baseX);
+  	        yPoints[2] = (int)(baseY);
         }
-        else
+        }
+
+        
+        if (style==1||style==3||style==5||style==7||style==9)
+    	g.setStroke(drawingStroke);
+//        if(!inix&&!iniy){
+//            g.drawLine(x,y,(int)baseX,y);
+//            g.drawLine((int)baseX,y,(int)baseX,(int)baseY);
+//        }
+//        else
         	g.drawLine(x,y,(int)baseX,(int)baseY);
-        g.fillPolygon(xPoints,yPoints,3);
+        	if(!(this.dest instanceof PointNoir)){
+		        if (style==2||style==3)
+		        	g.fillPolygon(xPoints,yPoints,3);
+		        if (style==4||style==5)
+		        	g.drawPolygon(xPoints,yPoints,3);
+		        if (style==6||style==7)
+		        	g.fillPolygon(xPoints,yPoints,4);
+		        if (style==8||style==9)
+		        	g.drawPolygon(xPoints,yPoints,4);
+        	}
+    
+        
     }
 }
