@@ -1,6 +1,7 @@
 package ihm.impl.diagrams.class_diagram.adapters;
 
 import ihm.abstracts.AbstractBasePanel;
+import ihm.impl.diagrams.arrows.Arrow;
 import ihm.interfaces.IBaseAdapter;
 import ihm.utils.animations.Animation;
 import ihm.utils.collision.Collisions;
@@ -26,9 +27,7 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 
 	@Override
 	public void mouseClicked(ArrayList<AbstractBasePanel> all,AbstractBasePanel c, MouseEvent e) {
-		
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -61,9 +60,15 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 		_p.setLocation(_MouseX+e.getComponent().getParent().getX(),_MouseY+e.getComponent().getParent().getY());
 		if(Collisions.isCollision(c, all))
 		{
-			Animation.returnToOrigin(c, _rect, 100, 100, _p);
+			Animation.returnToOrigin(c, _rect, 10, 10, _p);
+			
 		}
-		
+		for(AbstractBasePanel b : all){
+			if (b instanceof Arrow) {
+				//fait a la barbare mais bon...
+				((Arrow) b).requestRedraw();
+			}
+		}
 	}
 
 	@Override
@@ -72,7 +77,12 @@ public class ClassDiagram_ClassAdapter implements IBaseAdapter {
 		c.setBackground(new Color(255,0,0));
 		c.setBounds(c.getX() + e.getX() - _MouseX,c.getY() + e.getY() - _MouseY, c.getWidth(), c.getHeight());
 		c.getParent().repaint();
-		
+		for(AbstractBasePanel b : all){
+			if (b instanceof Arrow) {
+				//fait a la barbare mais bon...
+				((Arrow) b).requestRedraw();
+			}
+		}
 	}
 
 	@Override
