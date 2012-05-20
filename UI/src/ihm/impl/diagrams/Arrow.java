@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 public class Arrow extends JPanel
 {
     private JPanel src;
+    
     private JPanel dest;
     public static int style=0;
 
